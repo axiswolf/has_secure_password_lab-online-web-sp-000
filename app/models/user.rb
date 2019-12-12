@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   end
 
   # private
-  # 
+  #
   # def dumb_hash(input)
   #   input.bytes.reduce(:+)
   # end
