@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       if @user.password == @user.password_confirmation
       session[:user_id] = @user.id
       else
-        redirect_to '/users/signup'
+        redirect_to '/signup'
       end
   end
 
