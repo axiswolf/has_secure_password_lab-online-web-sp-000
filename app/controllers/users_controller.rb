@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     # sets your password if confirmation matches
     # redirects if password and confirmation don't match
     # @user = User.create(user_params)
-    # 
+    #
     # if params[:user][:password] != params[:user][:password_confirmation]
     #   redirect_to "/signup"
     # else
