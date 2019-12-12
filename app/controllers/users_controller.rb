@@ -11,4 +11,9 @@ class UsersController < ApplicationController
     # redirects if password and confirmation don't match
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :password_digest)
+  end
 end
