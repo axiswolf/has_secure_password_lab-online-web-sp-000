@@ -17,11 +17,13 @@ class UsersController < ApplicationController
     #   @user.save
     #   session[:user_id] = @user.id
     # end
-
-    @user = User.create(user_params)
-    return redirect_to controller: 'users', action: 'new' unless @user.save
-    session[:user_id] = @user.id
-    redirect_to controller: 'welcome', action: 'home'
+    if params[:user][:password] == params[:user][:password_confirmation]
+      @user = User.create(user_params)
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      redirect_to new_user_path, alert: "Invalid password."
+    end
   end
 
   private
