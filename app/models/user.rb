@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   def password=(new_password)
-    self.password_digest = dumb_hash(new_password)
+    self.password_digest = new_password
   end
 
   def authenticate(password)
@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
 
   private
 
-  def dumb_hash(input)
-    input.bytes.reduce(:+)
-  end
+  # def dumb_hash(input)
+  #   input.bytes.reduce(:+)
+  # end
 
 end
