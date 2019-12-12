@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     # logs you in
     # sets your password if confirmation matches
     # redirects if password and confirmation don't match
+    User.create(user_params)
   end
 
   private
